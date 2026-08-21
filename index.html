@@ -9,301 +9,149 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --orange-adb: #e65c00;
-      --orange-bright: #ff6600;
-      --orange-glow: rgba(255, 102, 0, 0.8);
-      --bg-card: rgba(15, 15, 15, 0.82);
-      --border-card: rgba(255, 102, 0, 0.25);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #0d0d0d;
-      color: #ffffff;
-      font-family: 'Montserrat', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px 20px 20px;
-      position: relative;
-    }
-
-    /* CAPA 1: Foto de la hinchada al fondo */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.85) 100%),
-                  url('hinchada.jpg') center/cover no-repeat;
-      z-index: -2;
-    }
-
-    /* CAPA 2: Escudo recortado transparente centrado */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: 650px;
-      height: 75vh;
-      background: url('escudo.png') center/contain no-repeat;
-      opacity: 0.35;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 950px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* ENCABEZADO */
-    header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .club-title {
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-    }
-
-    .materia-title {
-      font-size: 2.1rem;
-      font-weight: 900;
-      color: var(--orange-adb);
-      margin-bottom: 8px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-    }
-
-    .materia-title span {
-      color: #ffffff;
-    }
-
-    .repo-sub {
-      font-size: 0.95rem;
-      color: #d0d0d0;
-      font-weight: 400;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-    }
-
-    /* GRILLA */
-    .tp-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-
-    /* TARJETAS */
-    .tp-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: 14px;
-      padding: 25px 15px 20px;
-      text-decoration: none;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    }
-
-    .tp-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--orange-bright);
-      box-shadow: 0 0 20px var(--orange-glow);
-    }
-
-    .tp-number {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 6px;
-      letter-spacing: 1px;
-    }
-
-    .tp-name {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #e0e0e0;
-      margin-bottom: 25px;
-    }
-
-    .tp-action {
-      font-size: 0.75rem;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      color: var(--orange-adb);
-      text-transform: uppercase;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 15px 0;
-      width: 100%;
-    }
-
-    .footer-author {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .footer-author span {
-      color: var(--orange-adb);
-    }
-
-    .footer-location {
-      color: var(--orange-adb);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .footer-year {
-      color: #a0a0a0;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    @media (max-width: 800px) {
-      .tp-grid {
-        grid-template-columns: repeat(2, 1fr);
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            adb: {
+              DEFAULT: '#e65c00',
+              bright: '#ff6600',
+            }
+          }
+        }
       }
     }
-
-    @media (max-width: 500px) {
-      .tp-grid {
-        grid-template-columns: 1fr;
-      }
-      .materia-title {
-        font-size: 1.6rem;
-      }
-      .club-title {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  </script>
 </head>
-<body>
+<body class="bg-[#0d0d0d] text-white font-sans min-h-screen flex flex-col justify-between items-center px-5 pt-10 pb-5 relative overflow-x-hidden">
 
-  <div class="container">
-    <header>
-      <h2 class="club-title">ASOCIACIÓN DEPORTIVA BERAZATEGUI</h2>
-      <h1 class="materia-title"><span>Plataformas Móviles —</span> Trabajos Prácticos</h1>
-      <p class="repo-sub">Repositorio académico de Tobias Villasboa</p>
+  <!-- CAPA 1: Foto de la hinchada de fondo -->
+  <div class="fixed inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.75)_0%,rgba(10,10,10,0.85)_100%),url('hinchada.jpg')] bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
+
+  <!-- CAPA 2: Escudo transparente centrado -->
+  <div class="fixed inset-0 flex items-center justify-center pointer-events-none -z-10">
+    <img src="escudo.png" alt="Escudo Berazategui" class="w-full max-w-[650px] h-[75vh] object-contain opacity-35">
+  </div>
+
+  <div class="w-full max-w-[950px] mx-auto flex flex-col items-center z-10">
+    
+    <!-- ENCABEZADO -->
+    <header class="text-center mb-[35px]">
+      <h2 class="text-[1.2rem] sm:text-[1.6rem] font-black tracking-[2px] text-white uppercase mb-1.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+        ASOCIACIÓN DEPORTIVA BERAZATEGUI
+      </h2>
+      <h1 class="text-[1.6rem] sm:text-[2.1rem] font-black text-adb mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+        <span class="text-white">Plataformas Móviles —</span> Trabajos Prácticos
+      </h1>
+      <p class="text-[0.95rem] text-[#d0d0d0] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+        Repositorio académico de Tobias Villasboa
+      </p>
     </header>
 
-    <main class="tp-grid">
-      <a href="tp-1/" class="tp-card">
+    <!-- GRILLA -->
+    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-10">
+      
+      <!-- TP 01 -->
+      <a href="tp-1/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 01</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 01</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-2/" class="tp-card">
+      <!-- TP 02 -->
+      <a href="tp-2/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 02</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 02</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Segundo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-3/" class="tp-card">
+      <!-- TP 03 -->
+      <a href="tp-3/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 03</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 03</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Tercer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-4/" class="tp-card">
+      <!-- TP 04 -->
+      <a href="tp-4/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 04</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 04</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Cuarto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-5/" class="tp-card">
+      <!-- TP 05 -->
+      <a href="tp-5/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 05</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 05</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Quinto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-6/" class="tp-card">
+      <!-- TP 06 -->
+      <a href="tp-6/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 06</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 06</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Sexto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-7/" class="tp-card">
+      <!-- TP 07 -->
+      <a href="tp-7/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 07</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 07</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Séptimo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-8/" class="tp-card">
+      <!-- TP 08 -->
+      <a href="tp-8/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 08</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 08</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Octavo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
-      <a href="tp-9/" class="tp-card">
+      <!-- TP 09 -->
+      <a href="tp-9/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="tp-number">TP 09</div>
-          <div class="tp-name">Primer Trabajo</div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 09</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Noveno Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
+
     </main>
 
-    <footer>
-      <p class="footer-author">Tobias Villasboa — <span>Plataformas Móviles</span></p>
-      <p class="footer-location">Berazategui, Buenos Aires</p>
-      <p class="footer-year">2026</p>
+    <!-- FOOTER -->
+    <footer class="text-center py-[15px] w-full">
+      <p class="text-[1rem] font-bold text-white mb-1">
+        Tobias Villasboa — <span class="text-adb">Plataformas Móviles</span>
+      </p>
+      <p class="text-adb text-[0.9rem] font-semibold mb-0.5">
+        Berazategui, Buenos Aires
+      </p>
+      <p class="text-[#a0a0a0] text-[0.85rem] font-semibold">
+        2026
+      </p>
     </footer>
+
   </div>
 
 </body>
