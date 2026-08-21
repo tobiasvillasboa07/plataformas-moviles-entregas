@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tobias Villasboa - Plataformas Móviles</title>
   
-  <!-- Fuente tipográfica moderna deportiva -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
@@ -13,7 +12,7 @@
   <style>
     :root {
       --bg-dark: #0a0a0a;
-      --bg-card: rgba(18, 18, 18, 0.85);
+      --bg-card: rgba(18, 18, 18, 0.88);
       --orange-adb: #ff6600;
       --orange-hover: #ff8533;
       --text-white: #ffffff;
@@ -41,7 +40,7 @@
       overflow-x: hidden;
     }
 
-    /* FONDO GENERAL: Hinchada de Berazategui oscurecida */
+    /* FONDO HINCHADA EN EMBEDDED BASE64 */
     body::before {
       content: "";
       position: fixed;
@@ -49,8 +48,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* Cambiá 'hinchada.jpg' por el nombre o URL de la imagen de la hinchada */
-      background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.82), rgba(10, 10, 10, 0.92)), url(https://www.youtube.com/watch?v=N-3YN5ZJto8);
+      background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.82), rgba(10, 10, 10, 0.92)), url('hinchada.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -98,14 +96,14 @@
       font-weight: 400;
     }
 
-    /* CONTENEDOR CON ESCUDO DE FONDO PARA LOS TRABAJOS */
+    /* CONTENEDOR CON ESCUDO DE FONDO */
     .tp-section-wrapper {
       position: relative;
       padding: 30px 10px;
       margin-bottom: 40px;
     }
 
-    /* ESCUDO DE 50 AÑOS EN EL CENTRO DE LA SECCIÓN DE TRABAJOS */
+    /* ESCUDO DE FONDO EN EMBEDDED BASE64 */
     .tp-section-wrapper::before {
       content: "";
       position: absolute;
@@ -115,8 +113,7 @@
       width: 100%;
       max-width: 650px;
       height: 100%;
-      /* Cambiá 'escudo.jpg' por el nombre o URL de la imagen del escudo de 50 años */
-      background-image: url('escudo.jpg');
+      background-image: url('escudo.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -125,7 +122,7 @@
       pointer-events: none;
     }
 
-    /* GRILLA DE TRABAJOS PRÁCTICOS (3 columnas en PC) */
+    /* GRILLA DE TRABAJOS PRÁCTICOS */
     .tp-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -134,7 +131,7 @@
       z-index: 1;
     }
 
-    /* ESTILO DE CADA TARJETA/BOTÓN */
+    /* TARJETAS */
     .tp-card {
       background: var(--bg-card);
       backdrop-filter: blur(5px);
@@ -153,7 +150,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
-    /* EFECTO HOVER */
     .tp-card:hover {
       transform: translateY(-6px) scale(1.02);
       border-color: var(--orange-adb);
@@ -191,7 +187,7 @@
       text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
     }
 
-    /* PIE DE PÁGINA */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px 0 10px;
@@ -223,7 +219,6 @@
       font-weight: 700;
     }
 
-    /* RESPONSIVO PARA CELULARES Y TABLETS */
     @media (max-width: 850px) {
       .tp-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -252,14 +247,12 @@
 <body>
 
   <div class="container">
-    <!-- Encabezado -->
     <header>
       <h2 class="club-title">ASOCIACIÓN DEPORTIVA BERAZATEGUI</h2>
       <h1 class="materia-title">Plataformas Móviles <span class="highlight">— Trabajos Prácticos</span></h1>
       <p class="repo-sub">Repositorio académico de Tobias Villasboa</p>
     </header>
 
-    <!-- Sección con el Escudo de Fondo -->
     <div class="tp-section-wrapper">
       <main class="tp-grid">
         <a href="tp-1/" class="tp-card">
@@ -336,7 +329,6 @@
       </main>
     </div>
 
-    <!-- Pie de página -->
     <footer>
       <p class="footer-author">Tobias Villasboa — <span class="highlight">Plataformas Móviles</span></p>
       <p class="footer-location">Berazategui, Buenos Aires</p>
