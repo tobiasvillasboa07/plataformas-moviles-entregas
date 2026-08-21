@@ -12,12 +12,12 @@
   <style>
     :root {
       --bg-dark: #0a0a0a;
-      --bg-card: rgba(18, 18, 18, 0.88);
+      --bg-card: rgba(20, 20, 20, 0.9);
       --orange-adb: #ff6600;
       --orange-hover: #ff8533;
       --text-white: #ffffff;
-      --text-muted: #d0d0d0;
-      --border-color: rgba(255, 102, 0, 0.35);
+      --text-muted: #a0a0a0;
+      --border-color: rgba(255, 102, 0, 0.4);
     }
 
     * {
@@ -36,35 +36,17 @@
       justify-content: space-between;
       align-items: center;
       padding: 30px 20px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* UNICO FONDO: Escudo centrado */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: 750px;
-      height: 85vh;
-      background-image: url('escudo.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.25;
-      z-index: -1;
-      pointer-events: none;
+      /* Fondo oscuro deportivo con degradado e iluminación sutil */
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 102, 0, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);
+      background-attachment: fixed;
     }
 
     .container {
       width: 100%;
       max-width: 1000px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
 
     /* ENCABEZADO */
@@ -72,22 +54,35 @@
       text-align: center;
       margin-top: 10px;
       margin-bottom: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ESCUDO COMO LOGO SUPERIOR */
+    .club-logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 12px rgba(255, 102, 0, 0.5));
+      border-radius: 8px;
     }
 
     .club-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 900;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .materia-title {
       font-size: 2.2rem;
       font-weight: 900;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .materia-title .highlight {
@@ -95,7 +90,7 @@
     }
 
     .repo-sub {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       font-weight: 400;
     }
@@ -108,10 +103,9 @@
       margin-bottom: 40px;
     }
 
-    /* TARJETAS */
+    /* TARJETAS CON BORDES NEÓN */
     .tp-card {
       background: var(--bg-card);
-      backdrop-filter: blur(8px);
       border: 1.5px solid var(--border-color);
       border-radius: 12px;
       padding: 28px 20px 22px 20px;
@@ -122,22 +116,21 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      position: relative;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .tp-card:hover {
-      transform: translateY(-6px) scale(1.02);
+      transform: translateY(-6px);
       border-color: var(--orange-adb);
-      box-shadow: 0 0 25px rgba(255, 102, 0, 0.55), inset 0 0 10px rgba(255, 102, 0, 0.2);
-      background-color: rgba(26, 26, 26, 0.95);
+      box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+      background-color: #1a1a1a;
     }
 
     .tp-number {
       font-size: 2.2rem;
       font-weight: 900;
-      color: var(--text-white);
+      color: var(--orange-adb);
       line-height: 1;
       margin-bottom: 10px;
       letter-spacing: 1px;
@@ -161,7 +154,6 @@
 
     .tp-card:hover .tp-action {
       color: var(--orange-hover);
-      text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
     }
 
     /* FOOTER */
@@ -169,6 +161,7 @@
       text-align: center;
       padding: 20px 0 10px;
       width: 100%;
+      border-top: 1px solid rgba(255, 102, 0, 0.2);
     }
 
     .footer-author {
@@ -219,6 +212,8 @@
 
   <div class="container">
     <header>
+      <!-- Imagen del escudo ubicada arriba como logo oficial -->
+      <img src="escudo.png" alt="Escudo Berazategui" class="club-logo">
       <h2 class="club-title">ASOCIACIÓN DEPORTIVA BERAZATEGUI</h2>
       <h1 class="materia-title">Plataformas Móviles <span class="highlight">— Trabajos Prácticos</span></h1>
       <p class="repo-sub">Repositorio académico de Tobias Villasboa</p>
@@ -230,7 +225,7 @@
           <div class="tp-number">TP 01</div>
           <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-2/" class="tp-card">
@@ -238,7 +233,7 @@
           <div class="tp-number">TP 02</div>
           <div class="tp-name">Segundo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-3/" class="tp-card">
@@ -246,7 +241,7 @@
           <div class="tp-number">TP 03</div>
           <div class="tp-name">Tercer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-4/" class="tp-card">
@@ -254,7 +249,7 @@
           <div class="tp-number">TP 04</div>
           <div class="tp-name">Cuarto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-5/" class="tp-card">
@@ -262,7 +257,7 @@
           <div class="tp-number">TP 05</div>
           <div class="tp-name">Quinto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-6/" class="tp-card">
@@ -270,7 +265,7 @@
           <div class="tp-number">TP 06</div>
           <div class="tp-name">Sexto Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-7/" class="tp-card">
@@ -278,7 +273,7 @@
           <div class="tp-number">TP 07</div>
           <div class="tp-name">Séptimo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-8/" class="tp-card">
@@ -286,7 +281,7 @@
           <div class="tp-number">TP 08</div>
           <div class="tp-name">Octavo Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
 
       <a href="tp-9/" class="tp-card">
@@ -294,7 +289,7 @@
           <div class="tp-number">TP 09</div>
           <div class="tp-name">Noveno Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO</div>
+        <div class="tp-action">VER TRABAJO ➔</div>
       </a>
     </main>
 
