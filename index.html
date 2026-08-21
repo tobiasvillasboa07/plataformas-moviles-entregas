@@ -11,13 +11,11 @@
 
   <style>
     :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: rgba(20, 20, 20, 0.9);
-      --orange-adb: #ff6600;
-      --orange-hover: #ff8533;
-      --text-white: #ffffff;
-      --text-muted: #a0a0a0;
-      --border-color: rgba(255, 102, 0, 0.4);
+      --orange-adb: #e65c00;
+      --orange-bright: #ff6600;
+      --orange-glow: rgba(255, 102, 0, 0.8);
+      --bg-card: rgba(15, 15, 15, 0.82);
+      --border-card: rgba(255, 102, 0, 0.25);
     }
 
     * {
@@ -27,183 +25,193 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-white);
+      background-color: #0d0d0d;
+      color: #ffffff;
       font-family: 'Montserrat', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 20px;
-      /* Fondo oscuro deportivo con degradado e iluminación sutil */
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 102, 0, 0.2) 0%, transparent 60%),
-        radial-gradient(circle at 50% 100%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);
-      background-attachment: fixed;
+      padding: 40px 20px 20px;
+      position: relative;
+    }
+
+    /* CAPA 1: Foto de la hinchada al fondo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.85) 100%),
+                  url('hinchada.jpg') center/cover no-repeat;
+      z-index: -2;
+    }
+
+    /* CAPA 2: Escudo recortado transparente centrado */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 650px;
+      height: 75vh;
+      background: url('escudo.png') center/contain no-repeat;
+      opacity: 0.35;
+      z-index: -1;
+      pointer-events: none;
     }
 
     .container {
       width: 100%;
-      max-width: 1000px;
+      max-width: 950px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* ENCABEZADO */
     header {
       text-align: center;
-      margin-top: 10px;
       margin-bottom: 35px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* ESCUDO COMO LOGO SUPERIOR */
-    .club-logo {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 12px rgba(255, 102, 0, 0.5));
-      border-radius: 8px;
     }
 
     .club-title {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-weight: 900;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 6px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
     }
 
     .materia-title {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 10px;
+      color: var(--orange-adb);
+      margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
     }
 
-    .materia-title .highlight {
-      color: var(--orange-adb);
+    .materia-title span {
+      color: #ffffff;
     }
 
     .repo-sub {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: #d0d0d0;
       font-weight: 400;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
 
-    /* GRILLA DE TRABAJOS PRÁCTICOS */
+    /* GRILLA */
     .tp-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
+      width: 100%;
       margin-bottom: 40px;
     }
 
-    /* TARJETAS CON BORDES NEÓN */
+    /* TARJETAS */
     .tp-card {
       background: var(--bg-card);
-      border: 1.5px solid var(--border-color);
-      border-radius: 12px;
-      padding: 28px 20px 22px 20px;
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 25px 15px 20px;
       text-decoration: none;
-      color: var(--text-white);
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       text-align: center;
+      backdrop-filter: blur(4px);
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
     }
 
     .tp-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--orange-adb);
-      box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
-      background-color: #1a1a1a;
+      transform: translateY(-5px);
+      border-color: var(--orange-bright);
+      box-shadow: 0 0 20px var(--orange-glow);
     }
 
     .tp-number {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 900;
-      color: var(--orange-adb);
-      line-height: 1;
-      margin-bottom: 10px;
+      color: #ffffff;
+      margin-bottom: 6px;
       letter-spacing: 1px;
     }
 
     .tp-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 22px;
-      color: var(--text-white);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #e0e0e0;
+      margin-bottom: 25px;
     }
 
     .tp-action {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 900;
       letter-spacing: 1.5px;
       color: var(--orange-adb);
       text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .tp-card:hover .tp-action {
-      color: var(--orange-hover);
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px 0 10px;
+      padding: 15px 0;
       width: 100%;
-      border-top: 1px solid rgba(255, 102, 0, 0.2);
     }
 
     .footer-author {
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      color: #ffffff;
+      margin-bottom: 4px;
     }
 
-    .footer-author .highlight {
+    .footer-author span {
       color: var(--orange-adb);
     }
 
     .footer-location {
       color: var(--orange-adb);
       font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 4px;
+      font-weight: 600;
+      margin-bottom: 2px;
     }
 
     .footer-year {
-      color: var(--text-muted);
+      color: #a0a0a0;
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 600;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 800px) {
       .tp-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 500px) {
       .tp-grid {
         grid-template-columns: 1fr;
       }
-      
       .materia-title {
         font-size: 1.6rem;
       }
-
       .club-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -212,10 +220,8 @@
 
   <div class="container">
     <header>
-      <!-- Imagen del escudo ubicada arriba como logo oficial -->
-      <img src="escudo.png" alt="Escudo Berazategui" class="club-logo">
       <h2 class="club-title">ASOCIACIÓN DEPORTIVA BERAZATEGUI</h2>
-      <h1 class="materia-title">Plataformas Móviles <span class="highlight">— Trabajos Prácticos</span></h1>
+      <h1 class="materia-title"><span>Plataformas Móviles —</span> Trabajos Prácticos</h1>
       <p class="repo-sub">Repositorio académico de Tobias Villasboa</p>
     </header>
 
@@ -225,76 +231,76 @@
           <div class="tp-number">TP 01</div>
           <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-2/" class="tp-card">
         <div>
           <div class="tp-number">TP 02</div>
-          <div class="tp-name">Segundo Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-3/" class="tp-card">
         <div>
           <div class="tp-number">TP 03</div>
-          <div class="tp-name">Tercer Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-4/" class="tp-card">
         <div>
           <div class="tp-number">TP 04</div>
-          <div class="tp-name">Cuarto Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-5/" class="tp-card">
         <div>
           <div class="tp-number">TP 05</div>
-          <div class="tp-name">Quinto Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-6/" class="tp-card">
         <div>
           <div class="tp-number">TP 06</div>
-          <div class="tp-name">Sexto Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-7/" class="tp-card">
         <div>
           <div class="tp-number">TP 07</div>
-          <div class="tp-name">Séptimo Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-8/" class="tp-card">
         <div>
           <div class="tp-number">TP 08</div>
-          <div class="tp-name">Octavo Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
 
       <a href="tp-9/" class="tp-card">
         <div>
           <div class="tp-number">TP 09</div>
-          <div class="tp-name">Noveno Trabajo</div>
+          <div class="tp-name">Primer Trabajo</div>
         </div>
-        <div class="tp-action">VER TRABAJO ➔</div>
+        <div class="tp-action">VER TRABAJO</div>
       </a>
     </main>
 
     <footer>
-      <p class="footer-author">Tobias Villasboa — <span class="highlight">Plataformas Móviles</span></p>
+      <p class="footer-author">Tobias Villasboa — <span>Plataformas Móviles</span></p>
       <p class="footer-location">Berazategui, Buenos Aires</p>
       <p class="footer-year">2026</p>
     </footer>
