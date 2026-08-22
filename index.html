@@ -28,162 +28,162 @@
     }
   </script>
 </head>
-<body class="bg-[#0d0d0d] text-white font-sans min-h-screen flex flex-col justify-between items-center px-5 pt-10 pb-5 relative overflow-x-hidden">
+<body class="bg-[#0d0d0d] text-white font-sans min-h-screen flex flex-col justify-between items-center px-5 md:px-10 pt-10 md:pt-16 pb-5 md:pb-10 relative overflow-x-hidden">
 
-  <!-- CAPA DE FONDO: escudo ADB de fondo con overlay oscuro para legibilidad -->
-  <div class="fixed inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.55)_0%,rgba(10,10,10,0.75)_55%,rgba(10,10,10,0.92)_100%),url('escudo.png')] bg-cover bg-center bg-no-repeat bg-fixed -z-10"></div>
+  <!-- CAPA 1: Foto de la hinchada de fondo, oscurecida para que resalte el contenido -->
+  <div class="fixed inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.72)_0%,rgba(10,10,10,0.6)_45%,rgba(10,10,10,0.88)_100%),url('hinchada.jpg')] bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
 
-  <div class="w-full max-w-[950px] mx-auto flex flex-col items-center z-10">
+  <div class="w-full max-w-[950px] lg:max-w-[1150px] xl:max-w-[1300px] mx-auto flex flex-col items-center z-10">
 
     <!-- ENCABEZADO -->
-    <header class="text-center mb-[35px]">
-      <h2 class="text-[1.2rem] sm:text-[1.6rem] font-black tracking-[2px] text-white uppercase mb-1.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+    <header class="text-center mb-[35px] lg:mb-[50px]">
+      <h2 class="text-[1.2rem] sm:text-[1.6rem] lg:text-[1.9rem] font-black tracking-[2px] text-white uppercase mb-1.5 lg:mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
         ASOCIACIÓN DEPORTIVA BERAZATEGUI
       </h2>
-      <h1 class="text-[1.6rem] sm:text-[2.1rem] font-black text-adb mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+      <h1 class="text-[1.6rem] sm:text-[2.1rem] lg:text-[2.6rem] font-black text-adb mb-2 lg:mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
         <span class="text-white">Plataformas Móviles —</span> Trabajos Prácticos
       </h1>
-      <p class="text-[0.95rem] text-[#d0d0d0] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+      <p class="text-[0.95rem] lg:text-[1.1rem] text-[#d0d0d0] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
         Repositorio académico de Tobias Villasboa
       </p>
     </header>
 
     <!-- GRILLA -->
-    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-10">
+    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 w-full mb-10 lg:mb-14">
 
       <!-- TP 01 -->
-      <a href="tp-1/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-1/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 01</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Primer Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 01</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Primer Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 02 -->
-      <a href="tp-2/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-2/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 02</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Segundo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 02</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Segundo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 03 -->
-      <a href="tp-3/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-3/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 03</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Tercer Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 03</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Tercer Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 04 -->
-      <a href="tp-4/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-4/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 04</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Cuarto Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 04</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Cuarto Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 05 -->
-      <a href="tp-5/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-5/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 05</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Quinto Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 05</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Quinto Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 06 -->
-      <a href="tp-6/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-6/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 06</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Sexto Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 06</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Sexto Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 07 -->
-      <a href="tp-7/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-7/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 07</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Séptimo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 07</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Séptimo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 08 -->
-      <a href="tp-8/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-8/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 08</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Octavo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 08</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Octavo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 09 -->
-      <a href="tp-9/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-9/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 09</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Noveno Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 09</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Noveno Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 10 -->
-      <a href="tp-10/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-10/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 10</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Décimo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 10</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Décimo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 11 -->
-      <a href="tp-11/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-11/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 11</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Undécimo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 11</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Undécimo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 12 -->
-      <a href="tp-12/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-12/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 12</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Duodécimo Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 12</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Duodécimo Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 13 -->
-      <a href="tp-13/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-13/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 13</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimotercer Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 13</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Decimotercer Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 14 -->
-      <a href="tp-14/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-14/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 14</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimocuarto Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 14</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Decimocuarto Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
       <!-- TP 15 -->
-      <a href="tp-15/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+      <a href="tp-15/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] lg:px-[22px] pt-[25px] lg:pt-[35px] pb-[20px] lg:pb-[28px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
-          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 15</div>
-          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimoquinto Trabajo</div>
+          <div class="text-[2rem] lg:text-[2.5rem] font-black text-white mb-1.5 lg:mb-2 tracking-[1px]">TP 15</div>
+          <div class="text-[1rem] lg:text-[1.15rem] font-medium text-[#e0e0e0] mb-[25px] lg:mb-[32px]">Decimoquinto Trabajo</div>
         </div>
-        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+        <div class="text-[0.75rem] lg:text-[0.85rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
 
     </main>
