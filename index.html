@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tobias Villasboa - Plataformas Móviles</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
@@ -30,16 +30,11 @@
 </head>
 <body class="bg-[#0d0d0d] text-white font-sans min-h-screen flex flex-col justify-between items-center px-5 pt-10 pb-5 relative overflow-x-hidden">
 
-  <!-- CAPA 1: Foto de la hinchada de fondo -->
-  <div class="fixed inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.75)_0%,rgba(10,10,10,0.85)_100%),url('hinchada.jpg')] bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
-
-  <!-- CAPA 2: Escudo transparente centrado -->
-  <div class="fixed inset-0 flex items-center justify-center pointer-events-none -z-10">
-    <img src="escudo.png" alt="Escudo Berazategui" class="w-full max-w-[650px] h-[75vh] object-contain opacity-35">
-  </div>
+  <!-- CAPA DE FONDO: escudo ADB de fondo con overlay oscuro para legibilidad -->
+  <div class="fixed inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.55)_0%,rgba(10,10,10,0.75)_55%,rgba(10,10,10,0.92)_100%),url('escudo.png')] bg-cover bg-center bg-no-repeat bg-fixed -z-10"></div>
 
   <div class="w-full max-w-[950px] mx-auto flex flex-col items-center z-10">
-    
+
     <!-- ENCABEZADO -->
     <header class="text-center mb-[35px]">
       <h2 class="text-[1.2rem] sm:text-[1.6rem] font-black tracking-[2px] text-white uppercase mb-1.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
@@ -55,7 +50,7 @@
 
     <!-- GRILLA -->
     <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-10">
-      
+
       <!-- TP 01 -->
       <a href="tp-1/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
         <div>
@@ -133,6 +128,60 @@
         <div>
           <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 09</div>
           <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Noveno Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 10 -->
+      <a href="tp-10/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 10</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Décimo Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 11 -->
+      <a href="tp-11/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 11</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Undécimo Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 12 -->
+      <a href="tp-12/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 12</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Duodécimo Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 13 -->
+      <a href="tp-13/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 13</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimotercer Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 14 -->
+      <a href="tp-14/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 14</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimocuarto Trabajo</div>
+        </div>
+        <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
+      </a>
+
+      <!-- TP 15 -->
+      <a href="tp-15/" class="bg-[rgba(15,15,15,0.82)] border border-[rgba(255,102,0,0.25)] rounded-[14px] px-[15px] pt-[25px] pb-[20px] text-white text-center backdrop-blur-[4px] shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 flex flex-col justify-between items-center hover:-translate-y-[5px] hover:border-adb-bright hover:shadow-[0_0_20px_rgba(255,102,0,0.8)]">
+        <div>
+          <div class="text-[2rem] font-black text-white mb-1.5 tracking-[1px]">TP 15</div>
+          <div class="text-[1rem] font-medium text-[#e0e0e0] mb-[25px]">Decimoquinto Trabajo</div>
         </div>
         <div class="text-[0.75rem] font-black tracking-[1.5px] text-adb uppercase">VER TRABAJO</div>
       </a>
